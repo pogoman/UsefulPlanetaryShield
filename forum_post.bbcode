@@ -1,0 +1,76 @@
+[center][size=20pt][b]Useful Planetary Shield[/b][/size]
+[i]v0.1.0 — for Starsector 0.98a-RC5[/i][/center]
+
+[hr]
+
+Ever built a [b]Planetary Shield[/b], watched the pretty bubble wrap around your world, and then watched a Luddic Path crisis fleet saturation-bomb it into rubble anyway?
+
+That's not a bug. In vanilla the Planetary Shield industry does [i]nothing[/i] against orbital bombardment — it's a x3 ground-defense multiplier (anti-raid/invasion), a meteor-suppressor, and a cosmetic shield texture. The one thing its name promises, it does not do.
+
+[b]Useful Planetary Shield[/b] gives it that job — with a tradeoff so it isn't a free "my colony is now invincible" button.
+
+[hr]
+
+[size=14pt][b]Download[/b][/size]
+
+[url=https://github.com/pogoman/UsefulPlanetaryShield/releases/download/v0.1.0/UsefulPlanetaryShield-0.1.0.zip]UsefulPlanetaryShield-0.1.0.zip[/url]
+
+Extract into your Starsector [tt]mods/[/tt] folder and enable it in the launcher.
+
+[hr]
+
+[size=14pt][b]What it does[/b][/size]
+
+While the shield is [b]operational[/b] (built and not disrupted), a tactical or saturation bombardment of the colony is largely absorbed:
+
+[list]
+[li][b]Industry disruption[/b] is cut to 50% of its normal duration[/li]
+[li][b]Stability loss[/b] from the bombardment is cut to 50%[/li]
+[li][b]No pollution[/b] is inflicted on habitable worlds[/li]
+[li]The colony [b]cannot be reduced in size[/b] by a saturation strike[/li]
+[li]The colony [b]cannot be decivilized[/b] — by bombardment [i]or[/i] stability collapse[/li]
+[li]In exchange, the vanilla [b]x3 ground-defense bonus is removed[/b] — the shield stops bombs, not marines[/li]
+[/list]
+
+[b]The catch (and the balance):[/b] a bombardment the shield absorbs also [b]disrupts the shield generator itself[/b]. So a shielded colony shrugs off the [i]first[/i] strike and is then exposed until the shield repairs. A sustained bombardment campaign still gets through — you just can't be one-shotted, and you get a fighting chance to intercept the follow-up or resolve the crisis.
+
+This works against every source of bombardment: Luddic Path / Remnant / Sindrian Diktat colony crises, and any modded faction that bombards you.
+
+[hr]
+
+[size=14pt][b]Configuration[/b][/size]
+
+Every value above is adjustable. With [url=https://fractalsoftworks.com/forum/index.php?topic=25658.0][b]LunaLib[/b][/url] enabled (optional) you get an in-game settings menu; without it, the mod reads bundled defaults from [tt]data/config/settings.json[/tt] and runs fine standalone.
+
+You can tune the disruption/stability percentages, toggle the pollution / size / deciv protections individually, restore the vanilla ground-defense bonus, and restrict the effect to player colonies only.
+
+[hr]
+
+[size=14pt][b]Requirements & compatibility[/b][/size]
+
+[list]
+[li][b]Starsector 0.98a-RC5[/b][/li]
+[li][b]LunaLib[/b] — optional, for the in-game config menu[/li]
+[li]Safe to [b]add[/b] to an existing save[/li]
+[li]Safe to [b]remove[/b] — but first turn off "Block Decivilization" (or let the shield go offline) and load+save once, so no protection flag is left behind on a colony. (Details in the README.)[/li]
+[li][b]Conflict:[/b] any other mod that replaces the vanilla [tt]planetaryshield[/tt] industry plugin. This mod swaps that plugin to drop the ground-defense bonus; only one can win.[/li]
+[/list]
+
+[hr]
+
+[size=14pt][b]How it works[/b] (for the curious)[/size]
+
+[spoiler]Vanilla has no cancellable pre-bombardment hook — the AI crisis path calls the bombardment directly and fires no listeners, and the player-side listeners are post-hoc. So the mitigation is [b]reactive[/b]: a lightweight script snapshots each shielded colony a few times a day (industry disruption, unrest, size, pollution, the "recently bombarded" flag), detects a strike, and — if the shield was up when it landed — rolls the effects partway back.
+
+Decivilization is prevented [b]proactively[/b] by giving shielded colonies the game's own story-critical flag, which every bombardment path already checks to downgrade "destroy" into a survivable size hit. The flag is tracked carefully so a flag set by the base game or another mod is never disturbed, and it's removed the instant the shield stops working.
+
+Fully source-available; the repo README documents the exact code paths.[/spoiler]
+
+[hr]
+
+[size=14pt][b]Changelog[/b][/size]
+
+[b]v0.1.0[/b]
+[list]
+[li]Initial release.[/li]
+[/list]
