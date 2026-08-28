@@ -1,5 +1,5 @@
 [center][size=20pt][b]Useful Planetary Shield[/b][/size]
-[i]v0.1.1 — for Starsector 0.98a-RC5[/i][/center]
+[i]v0.1.2 — for Starsector 0.98a-RC5[/i][/center]
 
 [hr]
 
@@ -13,7 +13,7 @@ That's not a bug. In vanilla the Planetary Shield industry does [i]nothing[/i] a
 
 [size=14pt][b]Download[/b][/size]
 
-[url=https://github.com/pogoman/UsefulPlanetaryShield/releases/download/v0.1.1/UsefulPlanetaryShield-0.1.1.zip]UsefulPlanetaryShield-0.1.1.zip[/url]
+[url=https://github.com/pogoman/UsefulPlanetaryShield/releases/download/v0.1.2/UsefulPlanetaryShield-0.1.2.zip]UsefulPlanetaryShield-0.1.2.zip[/url]
 
 Extract into your Starsector [tt]mods/[/tt] folder and enable it in the launcher.
 
@@ -32,7 +32,7 @@ While the shield is [b]operational[/b] (built and not disrupted), a tactical or 
 [li]In exchange, the vanilla [b]x3 ground-defense bonus is removed[/b] — the shield stops bombs, not marines[/li]
 [/list]
 
-[b]The catch (and the balance):[/b] a bombardment the shield absorbs also [b]disrupts the shield generator itself[/b]. So a shielded colony shrugs off the [i]first[/i] strike and is then exposed until the shield repairs. A sustained bombardment campaign still gets through — you just can't be one-shotted, and you get a fighting chance to intercept the follow-up or resolve the crisis.
+[b]The catch (and the balance):[/b] a bombardment the shield absorbs also [b]knocks the shield generator offline[/b] — at least 60 days for a tactical strike (configurable), and the full (halved) disruption for a saturation strike. So a shielded colony shrugs off the [i]first[/i] strike and is then exposed until the shield repairs. A sustained bombardment campaign still gets through — you just can't be one-shotted, and you get a fighting chance to intercept the follow-up or resolve the crisis.
 
 This works against every source of bombardment: Luddic Path / Remnant / Sindrian Diktat colony crises, and any modded faction that bombards you.
 
@@ -69,6 +69,11 @@ Fully source-available; the repo README documents the exact code paths.[/spoiler
 [hr]
 
 [size=14pt][b]Changelog[/b][/size]
+
+[b]v0.1.2[/b]
+[list]
+[li]Absorbing a [i]tactical[/i] bombardment now also knocks the shield offline (min 60 days, configurable, 0 = old behavior). Vanilla tac strikes only disrupt military-tagged industries and never touch the shield, so tac bombs were being absorbed for free, forever. Saturation strikes already disrupted the shield; the new value acts as a floor there.[/li]
+[/list]
 
 [b]v0.1.1[/b]
 [list]

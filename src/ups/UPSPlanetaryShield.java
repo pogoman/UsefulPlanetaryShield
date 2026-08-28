@@ -93,8 +93,15 @@ public class UPSPlanetaryShield extends PlanetaryShield {
 					opad, h, what);
 		}
 
-		tooltip.addPara("The shield generator itself is disrupted by a bombardment it absorbs, "
-				+ "leaving the colony unprotected until repairs are complete.", opad);
+		int offlineDays = Math.round(UPSConfig.shieldOfflineDays());
+		if (offlineDays > 0) {
+			tooltip.addPara("The shield generator itself is knocked offline for at least %s days "
+					+ "by a bombardment it absorbs, leaving the colony unprotected until repairs "
+					+ "are complete.", opad, h, "" + offlineDays);
+		} else {
+			tooltip.addPara("The shield generator itself is disrupted by a saturation bombardment "
+					+ "it absorbs, leaving the colony unprotected until repairs are complete.", opad);
+		}
 	}
 
 	@Override

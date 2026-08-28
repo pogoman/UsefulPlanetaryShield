@@ -63,6 +63,9 @@ public class UPSConfig {
 
 	public static boolean blockPollution() { return b("ups_blockPollution", true); }
 
+	/** Minimum days the shield is knocked offline after absorbing a bombardment (0 = off). */
+	public static float shieldOfflineDays() { return Math.max(0f, f("ups_shieldOfflineDays")); }
+
 	// ---- population protection ----
 
 	public static boolean blockSizeReduction() { return b("ups_blockSizeReduction", true); }

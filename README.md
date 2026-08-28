@@ -21,11 +21,18 @@ While the shield is **operational** (built, not disrupted):
 - In exchange, the vanilla **x3 ground-defense bonus is removed** by default
   (configurable) - the shield stops bombs, not marines
 
-The balance valve is built into vanilla data: a bombardment disrupts the shield
-generator itself (`disruptDanger EXTREME`, no `no_saturation_bombardment` tag),
-so a shielded colony absorbs the *first* strike and is then unprotected until
-the shield repairs. An already-disrupted shield absorbs nothing. Sustained
-bombardment campaigns still get through; single strikes do not gut a colony.
+The balance valve: absorbing a strike knocks the shield generator offline.
+For saturation bombardment this happens via vanilla targeting anyway (the
+shield has `disruptDanger EXTREME` and no `no_saturation_bombardment` tag);
+tactical bombardment never touches the shield in vanilla (it only disrupts
+`tactical_bombardment`-tagged military industries), so the mod applies a
+configurable minimum offline duration (default 60 days, `ups_shieldOfflineDays`,
+0 = off) after any absorbed strike - implemented as a floor via
+`setDisrupted(days, useMax)`, so the longer sat-bomb disruption wins when
+present. A shielded colony absorbs the *first* strike and is then unprotected
+until the shield repairs. An already-disrupted shield absorbs nothing.
+Sustained bombardment campaigns still get through; single strikes do not gut a
+colony.
 
 Applies to every market with a functional shield - including NPC markets the
 player bombards - unless "Player Colonies Only" is enabled.

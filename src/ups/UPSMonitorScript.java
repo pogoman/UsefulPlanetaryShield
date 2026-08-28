@@ -245,6 +245,18 @@ public class UPSMonitorScript implements EveryFrameScript {
 			didAnything = true;
 		}
 
+		// 5) absorbing the strike knocks the shield generator offline.
+		// Saturation strikes already disrupt it (vanilla targeting; halved above) -
+		// setDisrupted with useMax makes this a floor. Tactical strikes never touch
+		// the shield in vanilla, so without this they'd be absorbed for free forever.
+		float offlineDays = UPSConfig.shieldOfflineDays();
+		if (didAnything && offlineDays > 0) {
+			Industry shield = market.getIndustry(Industries.PLANETARYSHIELD);
+			if (shield != null) {
+				shield.setDisrupted(offlineDays, true);
+			}
+		}
+
 		if (didAnything) {
 			if (UPSConfig.debugLogging()) {
 				log.info("[UPS] " + market.getName() + ": bombardment absorbed (shield was functional)");

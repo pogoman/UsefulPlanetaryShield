@@ -12,6 +12,12 @@
 	# A functional shield prevents the pollution condition a bombardment would add.
 	"ups_blockPollution": true,
 
+	# Minimum days the shield generator is knocked offline after absorbing a
+	# bombardment. Saturation strikes already disrupt it via vanilla targeting
+	# (this acts as a floor); tactical strikes never touch it in vanilla, so
+	# without this they would be absorbed for free forever. 0 = disabled.
+	"ups_shieldOfflineDays": 60,
+
 	# A functional shield prevents the colony-size reduction from a saturation bombardment.
 	"ups_blockSizeReduction": true,
 
