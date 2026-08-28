@@ -1,0 +1,5 @@
+# Repo-only files - excluded from release zips built with git archive
+.gitignore export-ignore
+.gitattributes export-ignore
+forum_post.bbcode export-ignore
+screenshots/ export-ignore
