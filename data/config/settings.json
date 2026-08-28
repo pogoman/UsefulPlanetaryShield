@@ -1,0 +1,35 @@
+{
+	# Useful Planetary Shield - fallback defaults (used when LunaLib is not enabled;
+	# with LunaLib, values come live from the in-game mod settings menu)
+
+	# Fraction of bombardment-caused industry disruption that gets THROUGH the shield.
+	# 0.5 = disruption durations are halved. 0 = fully absorbed, 1 = vanilla.
+	"ups_disruptionMult": 0.5,
+
+	# Fraction of bombardment-caused stability loss (recent unrest) that gets through.
+	"ups_unrestMult": 0.5,
+
+	# A functional shield prevents the pollution condition a bombardment would add.
+	"ups_blockPollution": true,
+
+	# A functional shield prevents the colony-size reduction from a saturation bombardment.
+	"ups_blockSizeReduction": true,
+
+	# A functional shield prevents the colony from being decivilized
+	# (saturation bombardment of small colonies, and stability-collapse deciv).
+	"ups_blockDeciv": true,
+
+	# Restore the vanilla ground-defense bonus (x3, more with alpha core/improvement).
+	# Off by default: the shield stops bombs, not marines.
+	"ups_groundDefenseBonus": false,
+
+	# Only protect player-owned colonies. Off = any market with a functional
+	# planetary shield benefits, including NPC markets the player bombards.
+	"ups_playerMarketsOnly": false,
+
+	# Show a message when the shield absorbs a bombardment.
+	"ups_showMessage": true,
+
+	# Verbose logging to starsector.log (prefix [UPS])
+	"ups_debugLogging": false,
+}

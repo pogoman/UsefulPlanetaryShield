@@ -1,0 +1,11 @@
+{
+	"id": "ups",
+	"name": "Useful Planetary Shield",
+	"author": "Tristan",
+	"version": "0.1.0",
+	"description": "Makes the Planetary Shield actually shield the planet: while operational it absorbs the brunt of tactical and saturation bombardment - halved disruption, halved stability loss, no pollution, and the colony cannot be reduced in size or decivilized. In exchange it no longer boosts ground defenses (all configurable in-game via LunaLib, optional).",
+	"gameVersion": "0.98a-RC5",
+	"modPlugin": "ups.UPSModPlugin",
+	"jars": ["jars/UPS.jar"],
+	"utility": false
+}

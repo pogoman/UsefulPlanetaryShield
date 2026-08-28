@@ -1,0 +1,14 @@
+fieldID,fieldName,fieldType,defaultValue,fieldDescription,minValue,maxValue
+absorbHeader,Absorption Header,Header,Bombardment Absorption,"How much of a tactical or saturation bombardment's damage gets through a functional planetary shield. A shield that is already disrupted absorbs nothing - and the bombardment itself disrupts the shield, so repeated strikes will eventually land unmitigated.",,
+ups_disruptionMult,Disruption Getting Through,Double,0.5,"Fraction of bombardment-caused industry disruption time that gets through the shield. 0.5 = disruption durations halved. 0 = fully absorbed. 1 = vanilla.",0.0,1.0
+ups_unrestMult,Stability Loss Getting Through,Double,0.5,"Fraction of the bombardment's stability hit (recent unrest) that gets through the shield. 0.5 = halved. 0 = fully absorbed. 1 = vanilla.",0.0,1.0
+ups_blockPollution,Block Pollution,Boolean,true,"A functional shield prevents the permanent pollution condition a bombardment would otherwise add to a habitable world.",,
+protectHeader,Protection Header,Header,Population Protection,"The shield's hard guarantees: what a functional shield outright prevents.",,
+ups_blockSizeReduction,Block Size Reduction,Boolean,true,"A functional shield prevents the colony-size reduction from a saturation bombardment.",,
+ups_blockDeciv,Block Decivilization,Boolean,true,"A colony with a functional shield cannot be decivilized - neither by saturation bombardment nor by stability collapse. (Implemented via the story-critical market flag; if you uninstall the mod, disable this option and load+save once first so the flag is cleaned up.)",,
+scopeHeader,Scope Header,Header,Scope & Tradeoffs,"Who benefits, and what the shield gives up in exchange.",,
+ups_groundDefenseBonus,Vanilla Ground-Defense Bonus,Boolean,false,"Restore the vanilla x3 ground-defense bonus (plus alpha-core and improvement bonuses). Off by default: the shield stops bombs, not marines.",,
+ups_playerMarketsOnly,Player Colonies Only,Boolean,false,"Only protect player-owned colonies. Off = any market with a functional planetary shield benefits - including NPC markets you bombard yourself.",,
+ups_showMessage,Absorption Message,Boolean,true,"Show a message when a shield absorbs a bombardment over one of your colonies.",,
+debugHeader,Debug Header,Header,Debug,"Testing tools.",,
+ups_debugLogging,Verbose Logging,Boolean,false,"Logs shield snapshots, bombardment detection, and mitigation math to starsector.log (prefix [UPS]).",,
